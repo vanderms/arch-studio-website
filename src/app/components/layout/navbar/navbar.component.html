@@ -1,1 +1,38 @@
-
+<nav class="h-24 md:h-[9.5rem]">
+  <div class="left-0 w-full z-[99] bg-neutral" [ngClass]="navbarFixed ? 'fixed shadow-sm transition-[top] duration-300 top-0 h-24': 
+    'fixed top-0 h-24 md:relative md:pt-[6rem] md:top-[-6rem] md:h-[15.5rem]'">
+    <div
+      class="container h-full flex justify-between items-center md:justify-start md:gap-20 xl:gap-24">
+      <a routerLink="/" aria-label="Homepage" class="w-20 xl:w-24">
+        <img src="/assets/logo.svg" alt="">
+      </a>
+      <button aria-label="toggle-menu" class="p-1 md:hidden" (click)="toggleSidebar()">
+        <img
+          [src]="sidebarOpen ? '/assets/icons/icon-close.svg': '/assets/icons/icon-hamburger.svg'"
+          alt="">
+      </button>
+      <div
+        class="fixed w-[91.4667%] max-w-[21.4375rem] top-24 right-0 bg-neutral-100 px-12 py-10 md:contents"
+        [ngClass]="sidebarOpen ? 'right-0 transition-all' : 'right-[-21.4375rem]'">
+        <ul class="flex flex-col gap-4 md:flex-row md:text-neutral-400 md:gap-14">
+          <li><a routerLink="/portfolio"
+              class="body-nav hover:text-neutral-800">Portfolio</a></li>
+          <li><a routerLink="/about" class="body-nav hover:text-neutral-800">About Us</a>
+          </li>
+          <li><a routerLink="/contact" class="body-nav hover:text-neutral-800">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="sidebarOpen" (click)="closeSidebar()"
+    class="fixed z-[98] inset-0 bg-[#000] opacity-50 md:hidden">
+  </div>
+  <div *ngIf="!navbarFixed"
+    class="hidden md:flex absolute top-0 left-0 w-[calc(50%-17.9063rem)] z-[100] 
+    flex-col items-center gap-12 xl:w-[calc(50%-34.375rem)] xl:pr-[0.9375rem] xl:pl-[max(0px,50%-45rem)]">
+    <div class="h-[6.5rem] w-0 border-r border-neutral-200"></div>
+    <p class="text-[1.125rem] tracking-[1.125rem] text-neutral-200 [writing-mode:vertical-rl]
+      [transform:scale(-1)_rotate(180deg)] mb-[-1.125rem] uppercase">{{ page }}</p>
+  </div>
+</nav>

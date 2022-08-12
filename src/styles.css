@@ -6,8 +6,15 @@
   *,
   *::after,
   *::before {
-    @apply font-medium leading-none;
     font-family: "League Spartan", sans-serif;
+  }
+
+  main{
+    min-height: 200vh;
+  }
+
+  html {
+    @apply font-medium leading-none;
   }
 }
 
@@ -63,10 +70,13 @@
     line-height: 1.5rem;
   }
 
-  @media screen(sm) {
+  .body-nav {
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 2.5rem;
   }
 
-  @media screen(md) {
+   @media screen(md) {
     .headline-xxl {
       font-weight: 700;
       font-size: 7.5rem;
@@ -86,7 +96,9 @@
       letter-spacing: -2px;
     }
 
-    .headline-sm {
+    .body-nav {
+      font-size: 1.125rem;
+      line-height: 1.5625rem;
     }
   }
 
