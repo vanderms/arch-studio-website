@@ -1,3 +1,100 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  *,
+  *::after,
+  *::before {
+    @apply font-medium leading-none;
+    font-family: "League Spartan", sans-serif;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto;
+    max-width: calc(100% - 1rem);
+  }
+
+  @media screen(sm) {
+    .container {
+      max-width: 19.4375rem;
+    }
+  }
+
+  @media screen(md) {
+    .container {
+      max-width: 35.8125rem;
+    }
+  }
+
+  @media screen(xl) {
+    .container {
+      max-width: 69.375rem;
+    }
+  }
+}
+
+@layer components {
+  .headline-xl {
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 3rem;
+    letter-spacing: -1.2px;
+  }
+
+  .headline-md {
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 3.25rem;
+    letter-spacing: -1.71429px;
+  }
+
+  .headline-sm {
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  .body-md {
+    font-weight: 500;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+  }
+
+  @media screen(sm) {
+  }
+
+  @media screen(md) {
+    .headline-xxl {
+      font-weight: 700;
+      font-size: 7.5rem;
+      line-height: 12.5rem;
+      letter-spacing: -3px;
+    }
+
+    .headline-xl {
+      font-size: 6rem;
+      line-height: 5rem;
+      letter-spacing: -2px;
+    }
+
+    .headline-md {
+      font-size: 4.5rem;
+      line-height: 4rem;
+      letter-spacing: -2px;
+    }
+
+    .headline-sm {
+    }
+  }
+
+  @media screen(xl) {
+    .headline-xxl {
+      font-size: 15.625rem;
+      line-height: 12.5rem;
+      letter-spacing: -5px;
+    }
+  }
+}
