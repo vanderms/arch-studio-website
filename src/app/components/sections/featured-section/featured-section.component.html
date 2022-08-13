@@ -1,1 +1,33 @@
-<p>featured-section works!</p>
+<section class="mt-20 md:mt-[12.5rem] mb-[4.5rem] md:mb-[12.5rem]">
+  <div class="container grid grid-cols-1 md:grid-cols-2">
+    <h2 class="headline-md text-neutral-800 md:self-center">Featured</h2>
+    <ul class="grid grid-cols-1 gap-6 mt-11 col-span-2 order-1 md:mt-[5.3125rem] xl:grid-cols-3 
+      xl:mt-16 xl:gap-[1.875rem]">
+      <li *ngFor="let project of featured">
+        <article
+          class="w-full h-[15rem] relative p-6 flex justify-start items-end xl:h-[35rem] xl:p-10">
+          <div class="project-backdrop"></div>
+          <div class="hidden md:block absolute z-10 text-neutral opacity-50 text-[15.625rem] 
+          leading-[12.5rem] font-bold right-4 top-7 xl:top-[2.8125rem] xl:right-[-1rem]">
+            {{project.featured}}
+          </div>
+          <picture>
+            <source media="(min-width: 75rem)"
+              [srcset]="'/assets/portfolio/desktop/' + project.image">
+            <source media="(min-width: 45rem)"
+              [srcset]="'/assets/portfolio/tablet/' + project.image">
+            <img [src]="'/assets/portfolio/mobile/' + project.image" alt=""
+              class="absolute top-0 left-0 w-full h-full object-cover object-center">
+          </picture>
+          <header class="text-neutral relative z-10">
+            <h3 class="headline-sm">{{ project.name }}</h3>
+            <a routerLink="/portfolio" class="body-md">View All Projects</a>
+          </header>
+        </article>
+      </li>
+    </ul>
+    <a routerLink="/portfolio"
+      class="mt-6 primary-button !w-full md:!w-max md:mt-0 md:justify-self-end">See
+      All</a>
+  </div>
+</section>

@@ -113,7 +113,7 @@
 
 @layer components {
   .primary-button {
-    @apply flex items-center justify-between bg-neutral-800 hover:bg-neutral-500 text-neutral 
+    @apply flex items-center justify-center bg-neutral-800 hover:bg-neutral-500 text-neutral 
     gap-6 w-max h-max;
     padding: 1.5625rem 2rem 1.375rem 2.3125rem;
     font-weight: 700;
@@ -132,7 +132,7 @@
     mask-position: center;
   }
 
-  @keyframes slide-left-animation{
+  @keyframes slide-left-animation {
     from {
       transform: translateX(20%);
     }
@@ -141,7 +141,7 @@
     }
   }
 
-  @keyframes slide-right-animation{
+  @keyframes slide-right-animation {
     from {
       transform: translateX(-20%);
     }
@@ -150,14 +150,23 @@
     }
   }
 
-  .slide-left{
+  .slide-left {
     animation-name: slide-left-animation;
     animation-duration: 1s;
   }
 
-  .slide-right{
+  .slide-right {
     animation-name: slide-right-animation;
     animation-duration: 1s;
   }
-  
+
+  .project-backdrop {
+    @apply absolute inset-0;
+    z-index: 1;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.0001) 0.01%,
+      rgba(0, 0, 0, 0.499044) 100%
+    );
+  }
 }
