@@ -1,33 +1,25 @@
-<ul class="relative h-[35rem] md:h-[45rem] overflow-hidden" (swipeLeft)="swipeLeft()"
-  (swipeRight)="swipeRight()">
-  <li class="slide"
-    [ngClass]="{'prev-slide': slide === 1, 'cur-slide': slide === 0, 'next-slide': slide === 3}">
-    <app-hero-section image="image-hero-paramour.jpg" title="Project Paramour"
-      description="Project made for an art museum near Southwest London. Project Paramour 
-      is a statement of bold, modern architecture.">
-    </app-hero-section>
-  </li>
-  <li class="slide"
-    [ngClass]="{'prev-slide': slide === 2, 'cur-slide': slide === 1, 'next-slide': slide === 0}">
-    <app-hero-section image="image-hero-seraph.jpg" title="Seraph Station"
-      description="The 
-      Seraph Station project challenged us to design a unique station that would transport people 
-      through time. The result is a fresh and futuristic model inspired by space stations.">
-    </app-hero-section>
-  </li>
-  <li class="slide"
-    [ngClass]="{'prev-slide': slide === 3, 'cur-slide': slide === 2, 'next-slide': slide === 1}">
-    <app-hero-section image="image-hero-federal.jpg" title="Federal II Tower"
-      description="A sequel theme project for a tower originally built in the 1800s. We achieved this with a striking look of brutal minimalism with modern touches.">
-    </app-hero-section>
-  </li>
-  <li class="slide"
-    [ngClass]="{'prev-slide': slide === 0, 'cur-slide': slide === 3, 'next-slide': slide === 2}">
-    <app-hero-section image="image-hero-trinity.jpg" title="Trinity Bank Tower"
-      description="Trinity Bank challenged us to make a concept for a 84 story building located in the middle of a city with a high earthquake frequency. For this project we used curves to blend design and stability to meet our objectives.">
-    </app-hero-section>
-  </li>
-</ul>
+<div class="w-full overflow-hidden relative">
+  <ul class="grid grid-cols-4 w-[400%] relative left-[-100%]"
+    [ngClass]="{'slide-left': animation === 'left', 'slide-right': animation === 'right'}"
+    (swipeLeft)="slideOne('left')" (swipeRight)="slideOne('right')">
+    <li *ngFor="let item of slides; let i = index" [style.order]="(5 - (slide - i)) % 4">
+      <app-hero-section [title]="item.title" [image]="item.image"
+        [description]="item.description"></app-hero-section>
+    </li>
+  </ul>
+  <div class="hidden absolute xl:grid grid-cols-4 w-[20rem] h-20 bottom-0 left-[max(50%-39.6875rem,0px)]
+    bg-neutral text-[1.125rem] font-bold text-neutral-400
+  ">
+    <button (click)="handleClick(0)" class="hover:bg-neutral-100"
+      [ngClass]="{'bg-neutral-800 hover:!bg-neutral-800 text-neutral': slide === 0}">01</button>
+    <button (click)="handleClick(1)" class="hover:bg-neutral-100"
+      [ngClass]="{'bg-neutral-800 hover:!bg-neutral-800 text-neutral': slide === 1}">02</button>
+    <button (click)="handleClick(2)" class="hover:bg-neutral-100"
+      [ngClass]="{'bg-neutral-800 hover:!bg-neutral-800 text-neutral': slide === 2}">03</button>
+    <button (click)="handleClick(3)" class="hover:bg-neutral-100"
+      [ngClass]="{'bg-neutral-800 hover:!bg-neutral-800 text-neutral': slide === 3}">04</button>
+  </div>
+</div>
 <app-welcome-section></app-welcome-section>
 <app-team-section></app-team-section>
 <app-featured-section></app-featured-section>

@@ -132,26 +132,32 @@
     mask-position: center;
   }
 
-  .slide {
-    @apply absolute top-0 w-full transition-all duration-1000 hidden;
+  @keyframes slide-left-animation{
+    from {
+      transform: translateX(20%);
+    }
+    to {
+      transform: translateX(0%);
+    }
   }
 
-  .slide.transition-none {
-    transition: none;
+  @keyframes slide-right-animation{
+    from {
+      transform: translateX(-20%);
+    }
+    to {
+      transform: translateX(0%);
+    }
   }
 
-  .slide.prev-slide {
-    @apply block;
-    left: -100%;
+  .slide-left{
+    animation-name: slide-left-animation;
+    animation-duration: 1s;
   }
 
-  .slide.cur-slide {
-    @apply block;
-    left: 0%;
+  .slide-right{
+    animation-name: slide-right-animation;
+    animation-duration: 1s;
   }
-
-  .slide.next-slide {
-    @apply block;
-    left: 100%;
-  }
+  
 }

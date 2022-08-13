@@ -1,4 +1,5 @@
-import { AfterViewChecked, Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import slides from 'src/data/slides.json';
 
 @Component({
   selector: 'app-homepage',
@@ -7,38 +8,56 @@ import { AfterViewChecked, Component, OnDestroy, OnInit } from '@angular/core';
 })
 export class HomepageComponent implements OnInit, OnDestroy {
   slide: number = 0;
-  timeout: number | undefined = undefined;
+  intervalTimeout: number | undefined = undefined;
+  animationTimeout: number | undefined = undefined;
+  waitAnimationTimeout: number | undefined = undefined;
+  slides = slides;
+  animation: 'right' | 'left' | 'none' = 'none';
 
   constructor() {}
 
   ngOnInit(): void {
-    this.setNext(1, 10000);
+    this.slideOnInterval();
   }
 
   ngOnDestroy(): void {
-    window.clearTimeout(this.timeout);
+    window.clearTimeout(this.animationTimeout);
+    window.clearTimeout(this.intervalTimeout);
+    window.clearTimeout(this.intervalTimeout);
   }
 
-  setNext(slide: number, duration: number = 50) {
-    window.clearTimeout(this.timeout);
-    this.timeout = window.setTimeout(() => {
-      this.slide = slide;
-      const nextSlide = (this.slide + 1) % 4;
-      this.setNext(nextSlide, 10000);
-    }, duration);
+  slideOnInterval() {
+    window.clearTimeout(this.intervalTimeout);
+    this.intervalTimeout = window.setTimeout(() => {
+      this.slideOne('left');
+    }, 10000);
   }
 
-  swipeLeft() {
-    console.log('why?');
-
-    const nextSlide = (this.slide + 1) % 4;
-    console.log(nextSlide);
-    this.setNext(nextSlide);
+  async handleClick(target: number) {
+    this.slide = target;
+    this.slideOnInterval();
   }
 
-  swipeRight() {
-    const nextSlide = (this.slide + 3) % 4;
-    console.log(nextSlide);
-    this.setNext(nextSlide);
+  slideOne(animation: 'right' | 'left'): Promise<boolean> {
+    if (this.animation === 'none') {
+      return new Promise((resolve) => {
+        this.animation = animation;
+        this.slide =
+          animation === 'right' ? (this.slide + 3) % 4 : (this.slide + 1) % 4;
+        window.clearTimeout(this.animationTimeout);
+        this.animationTimeout = window.setTimeout(() => {
+          this.animation = 'none';
+          this.slideOnInterval();
+          resolve(true);
+        }, 1000);
+      });
+    }
+    return new Promise((resolve) => {
+      window.clearTimeout(this.waitAnimationTimeout);
+      this.waitAnimationTimeout = window.setTimeout(() => {
+        this.slideOnInterval();
+        resolve(false);
+      }, 1000);
+    });
   }
 }
