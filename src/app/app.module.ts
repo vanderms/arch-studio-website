@@ -14,6 +14,7 @@ import { HeroSectionComponent } from './components/sections/hero-section/hero-se
 import { WelcomeSectionComponent } from './components/sections/welcome-section/welcome-section.component';
 import { TeamSectionComponent } from './components/sections/team-section/team-section.component';
 import { FeaturedSectionComponent } from './components/sections/featured-section/featured-section.component';
+import { PortfolioSectionComponent } from './components/sections/portfolio-section/portfolio-section.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { FeaturedSectionComponent } from './components/sections/featured-section
     WelcomeSectionComponent,
     TeamSectionComponent,
     FeaturedSectionComponent,
+    PortfolioSectionComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HammerModule],
   providers: [],

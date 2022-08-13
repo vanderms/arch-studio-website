@@ -1,0 +1,23 @@
+<section class="mt-14 mb-[4.5rem] container md:mt-0 xl:mb-[10rem]">
+  <h2 class="sr-only">Our Projects</h2>
+  <ul class="grid grid-cols-1 gap-6 xl:grid-cols-3 xl:gap-x-[1.875rem] xl:gap-y-8">
+    <li *ngFor="let project of portfolioList">
+      <article
+        class="w-full h-[15rem] relative p-6 flex justify-start items-end md:p-10 xl:h-[35rem] xl:p-10">
+        <div class="project-backdrop"></div>
+        <picture>
+          <source media="(min-width: 75rem)"
+            [srcset]="'/assets/portfolio/desktop/' + project.image">
+          <source media="(min-width: 45rem)"
+            [srcset]="'/assets/portfolio/tablet/' + project.image">
+          <img [src]="'/assets/portfolio/mobile/' + project.image" alt=""
+            class="absolute top-0 left-0 w-full h-full object-cover object-center">
+        </picture>
+        <header class="text-neutral relative z-10">
+          <h3 class="headline-sm">{{ project.name }}</h3>
+          <p class="body-md">{{ project.date }}</p>
+        </header>
+      </article>
+    </li>
+  </ul>
+</section>
