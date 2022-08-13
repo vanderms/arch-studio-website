@@ -1,1 +1,21 @@
-<p>team-section works!</p>
+<section
+  class="mt-[7.0625rem] w-full h-[35rem] relative flex items-center md:mt-[14.5625rem] xl:mt-[12.5rem]">
+  <div class="contents md:block md:absolute container inset-0">
+    <picture>
+      <source media="(min-width: 75rem)"
+        srcset="/assets/home/desktop/image-small-team.jpg">
+      <source media="(min-width: 45rem)"
+        srcset="/assets/home/tablet/image-small-team.jpg">
+      <img src="/assets/home/mobile/image-small-team.jpg" alt=""
+        class="absolute w-full h-full top-0 left-0 object-cover object-center">
+    </picture>
+    <div class="absolute inset-0 z-10 bg-[#000] opacity-50"></div>
+  </div>
+  <header class="container relative z-10 md:pl-14 xl:pl-[11.875rem]">
+    <h2 class="headline-md text-neutral">Small team,<br />
+      big ideas
+    </h2>
+    <a routerLink="about" class="primary-button mt-[1.6875rem]">About Us</a>
+  </header>
+</section>
+
