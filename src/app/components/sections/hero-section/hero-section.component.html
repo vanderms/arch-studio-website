@@ -1,0 +1,18 @@
+<section class="relative w-full h-[35rem] md:h-[45rem]">
+  <div
+    class="container md:relative h-full pt-[7.25rem] md:pl-[3.625rem] md:pt-[11.625rem] xl:pl-[11.875rem]">
+    <picture class="h-full">
+      <source media="(min-width: 74rem)" [srcset]="imagePath.desktop">
+      <source media="(min-width: 45rem)" [srcset]="imagePath.tablet">
+      <img [src]="imagePath.mobile" alt=""
+        class="absolute top-0 z-[-1] left-0 w-full h-full object-center object-cover max-w-none">
+    </picture>
+    <div class="absolute inset-0 bg-[#000] opacity-[0.35]"></div>
+    <header class="relative z-10 text-neutral md:w-[28.5625rem] xl:w-[34rem]">
+      <h2 class="headline-xl">{{title}}</h2>
+      <p class="body-md mt-2.5">{{description}}</p>
+      <a routerLink="/portfolio" class="primary-button mt-20 md:mt-10">See Our
+        Portfolio</a>
+    </header>
+  </div>
+</section>

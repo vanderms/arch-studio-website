@@ -7,7 +7,7 @@ module.exports = {
     screens: {
       sm: '20.4375rem',
       md: '45rem',
-      xl: '74rem',
+      xl: '75rem',
     },
 
     colors: {

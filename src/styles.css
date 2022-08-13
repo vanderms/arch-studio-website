@@ -9,7 +9,7 @@
     font-family: "League Spartan", sans-serif;
   }
 
-  main{
+  main {
     min-height: 200vh;
   }
 
@@ -76,7 +76,7 @@
     line-height: 2.5rem;
   }
 
-   @media screen(md) {
+  @media screen(md) {
     .headline-xxl {
       font-weight: 700;
       font-size: 7.5rem;
@@ -108,5 +108,50 @@
       line-height: 12.5rem;
       letter-spacing: -5px;
     }
+  }
+}
+
+@layer components {
+  .primary-button {
+    @apply flex items-center justify-between bg-neutral-800 hover:bg-neutral-500 text-neutral 
+    gap-6 w-max h-max;
+    padding: 1.5625rem 2rem 1.375rem 2.3125rem;
+    font-weight: 700;
+    font-size: 1.125rem;
+    line-height: 1.5625rem;
+  }
+
+  .primary-button::after {
+    @apply block bg-neutral;
+    content: "";
+    width: 1.5rem;
+    height: 1.125rem;
+    mask-image: url(/assets/icons/icon-arrow.svg);
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    mask-position: center;
+  }
+
+  .slide {
+    @apply absolute top-0 w-full transition-all duration-1000 hidden;
+  }
+
+  .slide.transition-none {
+    transition: none;
+  }
+
+  .slide.prev-slide {
+    @apply block;
+    left: -100%;
+  }
+
+  .slide.cur-slide {
+    @apply block;
+    left: 0%;
+  }
+
+  .slide.next-slide {
+    @apply block;
+    left: 100%;
   }
 }

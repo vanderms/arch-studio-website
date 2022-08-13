@@ -29,7 +29,6 @@ export class NavbarComponent implements OnInit {
     this.router.events.subscribe(() => {
       this.sidebarOpen = false;
       this.page = getPage(this.router.url);
-      console.log(this.page);
     });
   }
 
@@ -43,6 +42,6 @@ export class NavbarComponent implements OnInit {
   @HostListener('window:scroll', ['$event.target'])
   onScroll(html: Document) {
     let scroll: number = html.scrollingElement?.scrollTop ?? 0;
-    this.navbarFixed = scroll > 96;
+    this.navbarFixed = scroll > 156;
   }
 }
