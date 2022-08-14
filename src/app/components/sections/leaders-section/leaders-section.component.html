@@ -1,0 +1,18 @@
+<section class="my-[7rem] md:mt-[12.5rem] md:mb-[9.9375rem]">
+  <div
+    class="container grid grid-cols-1 gap-14 md:gap-12 xl:grid-cols-[16.875rem,45.625rem] xl:justify-between">
+    <h2 class="headline-md text-neutral-800">The <br /> Leaders</h2>
+    <ul
+      class="grid grid-cols-1 gap-20 md:grid-cols-2 md:gap-y-[6.25rem] md:gap-x-[0.6875rem] xl:gap-x-[1.875rem] xl:gap-y-16">
+      <li *ngFor="let leader of leaders">
+        <figure>
+          <img [src]="'/assets/about/desktop/' + leader.image" [alt]="leader.name">
+          <figcaption class="mt-6 flex flex-col">
+            <span class="headline-sm text-neutral-800">{{ leader.name }}</span>
+            <span class="body-md text-neutral-800">{{ leader.role }}</span>
+          </figcaption>
+        </figure>
+      </li>
+    </ul>
+  </div>
+</section>
