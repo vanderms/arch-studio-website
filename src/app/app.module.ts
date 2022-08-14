@@ -15,6 +15,9 @@ import { WelcomeSectionComponent } from './components/sections/welcome-section/w
 import { TeamSectionComponent } from './components/sections/team-section/team-section.component';
 import { FeaturedSectionComponent } from './components/sections/featured-section/featured-section.component';
 import { PortfolioSectionComponent } from './components/sections/portfolio-section/portfolio-section.component';
+import { AboutCoverSectionComponent } from './components/sections/about-cover-section/about-cover-section.component';
+import { CoverSectionComponent } from './components/sections/cover-section/cover-section.component';
+
 
 @NgModule({
   declarations: [
@@ -30,6 +33,8 @@ import { PortfolioSectionComponent } from './components/sections/portfolio-secti
     TeamSectionComponent,
     FeaturedSectionComponent,
     PortfolioSectionComponent,
+    AboutCoverSectionComponent,
+    CoverSectionComponent,   
   ],
   imports: [BrowserModule, AppRoutingModule, HammerModule],
   providers: [],
