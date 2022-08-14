@@ -1,0 +1,41 @@
+<section class="mt-[6.25rem] md:mt-[12.5rem]">
+  <div class="container">
+    <div class="h-0 w-16 border-b border-neutral-200"></div>
+    <div
+      class="grid grid-cols-1 gap-10 mt-16 text-neutral-500 xl:grid-cols-3 xl:gap-[1.875rem] xl:mt-[4.5625rem]">
+      <h2 class="headline-md text-neutral-800">Contact <br /> Details</h2>
+
+      <article class="md:flex md:items-end md:justify-between xl:block">
+        <div>
+          <h3 class="text-[1.125rem] leading-[1.5rem] font-bold">Main Office</h3>
+          <address class="mt-4 body-md xl:mt-[0.875rem]">
+            <p>Mail : archone@mail.com</p>
+            <p>Address : 1892 Chenoweth Drive TN</p>
+            <p>Phone : 123-456-3451</p>
+          </address>
+        </div>
+        <a routerLink="/contact" fragment="map"
+          class="mt-10 ternary-button w-max xl:mt-[3.6875rem]">View on
+          Map</a>
+      </article>
+
+      <article class="md:flex md:items-end md:justify-between xl:block">
+        <div>
+          <h3 class="text-[1.125rem] leading-[1.5rem] font-bold">Office II</h3>
+          <address class="mt-4 body-md xl:mt-[0.875rem]">
+            <p>Mail : archtwo@mail.com</p>
+            <p>Address : 3399 Wines Lane TX</p>
+            <p>Phone : 832-123-4321</p>
+          </address>
+        </div>
+        <a routerLink="/contact" fragment="map"
+          class="mt-10 ternary-button w-max xl:mt-[3.6875rem]">
+          View on Map
+        </a>
+      </article>
+    </div>
+    <div>
+      <app-contact-map></app-contact-map>
+    </div>
+  </div>
+</section>

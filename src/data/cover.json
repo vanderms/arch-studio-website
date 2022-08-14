@@ -4,5 +4,11 @@
     "title": "Your team of professionals",
     "image": "/assets/about/desktop/image-hero.jpg",
     "text": "Our small team of world-class professionals will work with you every step of the way. Strong relationships are at the core of everything we do. This extends to the relationship our projects have with their surroundings."
+  },
+  "contact": {
+    "page": "Contact",
+    "title": "Tell us about your project",
+    "image": "/assets/contact/desktop/image-hero.jpg",
+    "text": "We'd love to hear more about your project. Please, leave a message below or give us a call. We have two offices, one in Texas and one in Tennessee. If you find yourself nearby, come say hello!"
   }
 }

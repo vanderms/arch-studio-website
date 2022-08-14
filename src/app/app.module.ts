@@ -19,7 +19,11 @@ import { AboutCoverSectionComponent } from './components/sections/about-cover-se
 import { CoverSectionComponent } from './components/sections/cover-section/cover-section.component';
 import { HeritageSectionComponent } from './components/sections/heritage-section/heritage-section.component';
 import { LeadersSectionComponent } from './components/sections/leaders-section/leaders-section.component';
-
+import { ContactCoverSectionComponent } from './components/sections/contact-cover-section/contact-cover-section.component';
+import { ContactDetailsSectionComponent } from './components/sections/contact-details-section/contact-details-section.component';
+import { ContactFormSectionComponent } from './components/sections/contact-form-section/contact-form-section.component';
+import { ContactMapComponent } from './components/maps/contact-map/contact-map.component';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 @NgModule({
   declarations: [
@@ -38,9 +42,13 @@ import { LeadersSectionComponent } from './components/sections/leaders-section/l
     AboutCoverSectionComponent,
     CoverSectionComponent,
     HeritageSectionComponent,
-    LeadersSectionComponent,   
+    LeadersSectionComponent,
+    ContactCoverSectionComponent,
+    ContactDetailsSectionComponent,
+    ContactFormSectionComponent,
+    ContactMapComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HammerModule],
+  imports: [BrowserModule, AppRoutingModule, HammerModule, LeafletModule],
   providers: [],
   bootstrap: [AppComponent],
 })

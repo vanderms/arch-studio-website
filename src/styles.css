@@ -9,8 +9,8 @@
     font-family: "League Spartan", sans-serif;
   }
 
-  main {
-    min-height: 200vh;
+  address {
+    font-style: normal;
   }
 
   html {
@@ -123,6 +123,23 @@
 
   .primary-button::after {
     @apply block bg-neutral;
+    content: "";
+    width: 1.5rem;
+    height: 1.125rem;
+    mask-image: url(/assets/icons/icon-arrow.svg);
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    mask-position: center;
+  }
+
+  .ternary-button {
+    @apply flex items-center justify-center text-neutral-800 hover:underline font-bold gap-6;
+    font-size: 1.125rem;
+    line-height: 1.5625rem;
+  }
+
+  .ternary-button::after {
+    @apply block bg-neutral-800;
     content: "";
     width: 1.5rem;
     height: 1.125rem;
