@@ -124,8 +124,8 @@
   .primary-button::after {
     @apply block bg-neutral;
     content: "";
-    width: 1.5rem;
-    height: 1.125rem;
+    width: 1.625rem;
+    height: 1.25rem;
     mask-image: url(/assets/icons/icon-arrow.svg);
     mask-repeat: no-repeat;
     mask-size: contain;
@@ -185,5 +185,27 @@
       rgba(0, 0, 0, 0.0001) 0.01%,
       rgba(0, 0, 0, 0.499044) 100%
     );
+  }
+
+  .primary-textfield {
+    @apply h-16 w-full border-b border-neutral-800 font-bold px-8;
+    font-size: 1.25rem;
+  }
+
+  .primary-textfield[data-error="true"] {
+    @apply border-danger;
+  }
+
+  .primary-textfield[data-error="true"]::placeholder{
+    @apply text-danger;
+    opacity: 0.5;
+  }
+
+  textarea.primary-textfield {
+    height: 7.5rem;
+  }
+
+  .input-error{
+    @apply block absolute text-danger font-bold right-0 bottom-4;
   }
 }

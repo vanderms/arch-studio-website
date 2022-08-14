@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactPageComponent },
 ];
 
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],

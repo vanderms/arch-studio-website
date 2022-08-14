@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HammerModule } from '@angular/platform-browser';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,7 +25,6 @@ import { ContactCoverSectionComponent } from './components/sections/contact-cove
 import { ContactDetailsSectionComponent } from './components/sections/contact-details-section/contact-details-section.component';
 import { ContactFormSectionComponent } from './components/sections/contact-form-section/contact-form-section.component';
 import { ContactMapComponent } from './components/maps/contact-map/contact-map.component';
-import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,13 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
     ContactFormSectionComponent,
     ContactMapComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HammerModule, LeafletModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HammerModule,
+    LeafletModule,
+    ReactiveFormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -1,1 +1,32 @@
-<p>contact-form-section works!</p>
+<section class="my-[4.5625rem] md:my-[12.5rem] xl:my-[10rem]">
+  <div class="container xl:grid xl:grid-cols-[17.5rem,45.625rem] xl:justify-between">
+    <h2 class="headline-md text-neutral-800">Connect<br />with us</h2>
+    <form [formGroup]="contactForm" (submit)="onSubmit($event)"
+      class="flex flex-col gap-11 mt-6 ">
+      <label class="relative">
+        <span class="sr-only">Name</span>
+        <input formControlName="name" type="text" placeholder="Name" required
+          class="primary-textfield" [attr.data-error]="isNameEmpty()">
+        <span *ngIf="isNameEmpty()" class="input-error">Can't be empty</span>
+      </label>
+      <label class="relative">
+        <span class="sr-only">Email</span>
+        <input formControlName="email" type="email" placeholder="Email" required
+          class="primary-textfield"
+          [attr.data-error]="isEmailEmpty() || isEmailInvalid()">
+        <span *ngIf="isEmailEmpty()" class="input-error">Can't be empty</span>
+        <span *ngIf="isEmailInvalid()" class="input-error">Invalid email</span>
+      </label>
+      <label class="relative">
+        <span class="sr-only">Message</span>
+        <textarea formControlName="message" placeholder="Message"
+          class="primary-textfield" [attr.data-error]="isMessageEmpty()"></textarea>
+        <span *ngIf="isMessageEmpty()" class="input-error">Can't be empty</span>
+      </label>
+      <button
+        class="w-20 h-20 grid place-items-center mt-[-2.75rem] self-end bg-neutral-800">
+        <img src="/assets/icons/icon-arrow.svg" alt="" class="[filter:invert(100%)]">
+      </button>
+    </form>
+  </div>
+</section>
