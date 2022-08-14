@@ -1,11 +1,14 @@
 <section>
   <div class="mx-auto md:max-w-[35.8125rem] xl:max-w-[69.375rem] relative">
-    <picture>
-      <source media="(min-width: 75rem)" [srcset]="imageSrc.desktop">
-      <source media="(min-width: 45rem)" [srcset]="imageSrc.tablet">
-      <img [src]="imageSrc.mobile" alt=""
-        class=" h-[15rem] w-full object-center object-cover md:h-[45rem] xl:w-[39.6875rem]">
-    </picture>
+    <div class="relative w-max h-max">
+      <picture>
+        <source media="(min-width: 75rem)" [srcset]="imageSrc.desktop">
+        <source media="(min-width: 45rem)" [srcset]="imageSrc.tablet">
+        <img [src]="imageSrc.mobile" alt=""
+          class=" h-[15rem] w-full object-center object-cover md:h-[45rem] xl:w-[39.6875rem]">
+      </picture>
+      <div class="absolute inset-0 bg-[#000] opacity-[0.35] z-[1]"></div>
+    </div>
     <header class="relative z-10 mr-2 pl-2 sm:mr-[calc(50%_-_9.7188rem)] sm:pl-[calc(50%_-_9.7188rem)] mt-[-2.8125rem]
      bg-neutral pt-[4.0625rem] md:absolute md:bottom-0 md:right-0 md:mr-0 md:pt-[5.5rem] md:pl-[3.625rem] md:mt-0
      md:left-[3.625rem] md:max-w-[39.25rem] xl:left-auto xl:px-0 xl:grid xl:grid-cols-1 xl:pt-[10rem]
