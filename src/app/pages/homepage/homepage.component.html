@@ -1,7 +1,6 @@
 <div class="w-full overflow-hidden relative">
   <ul class="grid grid-cols-4 w-[400%] relative left-[-100%]"
-    [ngClass]="{'slide-left': animation === 'left', 'slide-right': animation === 'right'}"
-    (swipeLeft)="slideOne('left')" (swipeRight)="slideOne('right')">
+    [ngClass]="{'slide-left': animation === 'left', 'slide-right': animation === 'right'}">
     <li *ngFor="let item of slides; let i = index" [style.order]="(5 - (slide - i)) % 4">
       <app-hero-section [title]="item.title" [image]="item.image"
         [description]="item.description"></app-hero-section>
